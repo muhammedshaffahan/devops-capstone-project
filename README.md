@@ -1,3 +1,13 @@
+
+# devops-capstone-project
+
+## Description
+
+This project is a DevOps capstone project for an e-commerce customer accounts microservice. It demonstrates Agile planning, development, testing, continuous integration, containerization with Docker, and deployment to Kubernetes.
+
+
+
+
 # DevOps Capstone Template
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
