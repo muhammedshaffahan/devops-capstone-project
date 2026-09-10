@@ -226,6 +226,8 @@ class TestAccountService(TestCase):
 
     # ADD YOUR TEST CASES HERE ...
 
+
+
     def test_list_accounts(self):
         """It should List all Accounts"""
 
@@ -246,5 +248,33 @@ class TestAccountService(TestCase):
         self.assertEqual(
             len(data),
             5,
-        
+        )
+
+    ######################################################################
+    #  U P D A T E   A N   A C C O U N T
+    ######################################################################
+
+    def test_update_account(self):
+        """It should Update an Account"""
+
+        account = self._create_accounts(1)[0]
+
+        account.name = "Updated Name"
+
+        resp = self.client.put(
+            f"{BASE_URL}/{account.id}",
+            json=account.serialize(),
+            content_type="application/json",
+        )
+
+        self.assertEqual(
+            resp.status_code,
+            status.HTTP_200_OK,
+        )
+
+        data = resp.get_json()
+
+        self.assertEqual(
+            data["name"],
+            "Updated Name",
         )
